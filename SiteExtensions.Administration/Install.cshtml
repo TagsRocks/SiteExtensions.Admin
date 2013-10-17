@@ -28,7 +28,7 @@
     
     Page.SectionTitle = String.Format(CultureInfo.CurrentCulture, PackageManagerResources.InstallPackageDesc, package.GetDisplayName());
 
-    var packagesHomeUrl = Href("~/", Request.Url.Query);
+    var packagesHomeUrl = Href("~/") + Request.Url.Query;
     if (IsPost) {
         AntiForgery.Validate();
         try {
