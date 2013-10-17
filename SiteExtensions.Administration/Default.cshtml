@@ -124,8 +124,14 @@ else {
             <div class="column-left">
                 @RenderPage("_Package.cshtml", dataDictionary)
             </div>
+
             <div class="right">
-                <form method="get" action="@Href(GetPostUrl(view, package, projectManager))">
+                @if (projectManager.IsPackageInstalled(package)) {
+                <form method="get" action="/@package.Id">
+                    <input class="formatted" type="submit" value="Run" />
+                </form>
+                }
+                <form class="mainform" method="get" action="@Href(GetPostUrl(view, package, projectManager))">
                     <input type="hidden" name="page" value="@(grid.PageIndex + 1)" />
                     <input type="hidden" name="package" value="@package.Id" />
                     <input type="hidden" name="version" value="@package.Version" />

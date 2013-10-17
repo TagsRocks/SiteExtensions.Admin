@@ -8,7 +8,7 @@
         $(this).closest('form').submit();
     });
 
-    $('#package-list form').submit(function (event) {
+    $('#package-list .mainform').submit(function (event) {
         event.preventDefault();
         var form = $(event.target);
         
