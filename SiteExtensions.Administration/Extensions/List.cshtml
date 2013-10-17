@@ -4,7 +4,6 @@
 
 @{
     string searchTerm = Request["search"];
-    Layout = null;
     
     var projectManager = new SiteExtensions.Administration.WebProjectManager();
     var installed = projectManager.GetInstalledPackages(searchTerm).ToList();

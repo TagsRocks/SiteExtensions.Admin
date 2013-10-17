@@ -3,8 +3,8 @@
 @using SiteExtensions.Administration.Resources;
 
 @{
-    var id = Request.Form["id"];
-    var version = SemanticVersion.Parse(Request.Form["version"]);
+    var id = Request["id"];
+    var version = SemanticVersion.Parse(Request["version"]);
 
     var projectManager = new SiteExtensions.Administration.WebProjectManager();
     var package = projectManager.SourceRepository.FindPackage(id, version);
