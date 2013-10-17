@@ -119,7 +119,8 @@
     <EmbeddedResource Include="scripts\Default.js" />
     <Content Include="PackageSources.cshtml" />
     <Content Include="Install.cshtml" />
-    <None Include="Packages\List.cshtml" />
+    <Content Include="Extensions\Install.cshtml" />
+    <Content Include="Extensions\List.cshtml" />
     <Content Include="Update.cshtml" />
     <Content Include="_Package.cshtml" />
     <Content Include="Default.cshtml" />
