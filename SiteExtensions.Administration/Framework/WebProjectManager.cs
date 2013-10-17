@@ -91,7 +91,9 @@ namespace SiteExtensions.Administration
                 File.WriteAllText(xdtPath, xdtTemplate.TransformText());
             }
 
-            var packageFile = Path.Combine(directoryToExpandTo, package.GetFullName() + ".nupkg");
+            var packageFile = Path.Combine(
+                directoryToExpandTo,
+                String.Format("{0}.{1}.nupkg", package.Id, package.Version));
             using (Stream readStream = package.GetStream(),
                           writeStream = File.OpenWrite(packageFile))
             {
