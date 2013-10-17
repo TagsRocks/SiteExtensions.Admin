@@ -48,7 +48,9 @@ namespace SiteExtensions.Administration
         {
             if (String.IsNullOrEmpty(searchTerms))
             {
-                return _sourceRepository.GetPackages().OrderByDescending(f => f.DownloadCount);
+                return _sourceRepository.GetPackages()
+                                        .Where(p => p.IsLatestVersion)
+                                        .OrderByDescending(f => f.DownloadCount);
             }
 
             return _sourceRepository.Search(searchTerms, allowPrereleaseVersions: false);

@@ -111,6 +111,7 @@
     <EmbeddedResource Include="scripts\Default.js" />
     <Content Include="PackageSources.cshtml" />
     <Content Include="Install.cshtml" />
+    <None Include="Packages\List.cshtml" />
     <Content Include="Update.cshtml" />
     <Content Include="_Package.cshtml" />
     <Content Include="Default.cshtml" />
@@ -119,6 +120,13 @@
     <Content Include="_PackageDetails.cshtml" />
     <Content Include="_pagestart.cshtml" />
     <Content Include="_Layout.cshtml" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
