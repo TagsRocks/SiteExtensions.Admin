@@ -83,6 +83,14 @@ namespace SiteExtensions.Administration
                 }
             }
 
+            // If there is no xdt file, generate a default one
+            string xdtPath = Path.Combine(directoryToExpandTo, "applicationHost.xdt");
+            if (!File.Exists(xdtPath))
+            {
+                var xdtTemplate = new XdtTemplate { Path = package.Id };
+                File.WriteAllText(xdtPath, xdtTemplate.TransformText());
+            }
+
             var packageFile = Path.Combine(directoryToExpandTo, package.GetFullName() + ".nupkg");
             using (Stream readStream = package.GetStream(),
                           writeStream = File.OpenWrite(packageFile))
