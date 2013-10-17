@@ -127,7 +127,7 @@ else {
 
             <div class="right">
                 @if (projectManager.IsPackageInstalled(package)) {
-                <form method="get" action="/@package.Id">
+                <form method="get" action="/@package.Id" target="_blank">
                     <input class="formatted" type="submit" value="Run" />
                 </form>
                 }
