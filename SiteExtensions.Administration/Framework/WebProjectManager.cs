@@ -88,7 +88,7 @@ namespace SiteExtensions.Administration
             if (!File.Exists(xdtPath))
             {
                 var xdtTemplate = new XdtTemplate { Path = package.Id };
-                File.WriteAllText(xdtPath, xdtTemplate.TransformText());
+                File.WriteAllText(xdtPath, xdtTemplate.TransformText().Trim());
             }
 
             var packageFile = Path.Combine(
