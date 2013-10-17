@@ -1,0 +1,22 @@
+﻿@using NuGet;
+@using SiteExtensions.Administration;
+@using SiteExtensions.Administration.Resources;
+
+@{
+    string searchTerm = Request["search"];
+    Layout = null;
+    
+    var projectManager = new SiteExtensions.Administration.WebProjectManager();
+    var installed = projectManager.GetInstalledPackages(searchTerm).ToList();
+    var online = projectManager.GetRemotePackages(searchTerm).ToList().Except(installed, PackageEqualityComparer.IdAndVersion);
+}
+
+@functions {
+    public object CreatePackage(IPackage p) {
+        return new { p.Id, Version = p.Version.ToString(), p.Title, p.Description };
+    }
+}
+
+
+@Html.Raw(Json.Encode(new { Installed = installed.Select(CreatePackage), Online = online.Select(CreatePackage) }))
+
