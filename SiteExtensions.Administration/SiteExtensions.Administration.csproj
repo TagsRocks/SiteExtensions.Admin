@@ -106,15 +106,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="images\error.png" />
+    <Content Include="images\error.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="images\package.png" />
+    <Content Include="images\package.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="images\aspLogo.gif" />
-    <EmbeddedResource Include="images\tabon.gif" />
-    <EmbeddedResource Include="images\ok.png" />
+    <Content Include="images\aspLogo.gif" />
+    <Content Include="images\tabon.gif" />
+    <Content Include="images\ok.png" />
     <EmbeddedResource Include="scripts\PackageAction.js" />
     <EmbeddedResource Include="scripts\Default.js" />
     <Content Include="PackageSources.cshtml" />
@@ -134,6 +134,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>XdtTemplate.generated.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
